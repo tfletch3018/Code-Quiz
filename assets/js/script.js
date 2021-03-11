@@ -2,6 +2,7 @@ var options = document.querySelector(".options");
 var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
+var questionsArea = document.getElementById("questions-area");
 var startButton = document.querySelector(".start-button");
 
 
@@ -15,36 +16,36 @@ var timer;
 var timerCount;
 
 // Array of quiz questions, multiple choice options, and responses
-var question = [{
-    
+var questionElement = [{
+
     question: "Commonly used data types DO NOT include:____.",
     options: ["strings( )", "booleans( )", "alerts( )", "numbers( )"],
-    response:"alerts( )"
+    response: "alerts( )"
 },
 
 {
     question: "The condition in an if / else statement is enclosed within ____.",
     options: ["quotes( )", "curly brackets( )", "parentheses( )", "square brackets( )"],
-    response:"parentheses( )"
+    response: "parentheses( )"
 },
 
 {
     question: "Arrays in JavaScript can be used to store ____.",
     options: ["numbers and strings( )", "other arrays( )", "booleans( )", "all of the above( )"],
-    response:"all of the above( )"
+    response: "all of the above( )"
 },
 
 {
     question: "String values must be enclosed within ____ when being assigned to variables.",
     options: ["commas( )", "curly brackets( )", "quotes( )", "parentheses( )"],
-    response:"quotes( )"   
+    response: "quotes( )"
 },
 
 {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     options: ["JavaScript( )", "terminal / bash( )", "for loops( )", "console.log( )"],
-    response:"console.log( )"
-    }
+    response: "console.log( )"
+}
 ]
 
 // The init function is called when the page loads
@@ -55,13 +56,39 @@ function init() {
 
 // The startGame funtion is called when the start button is clicked
 function startGame() {
-isWin = false;
-timerCount = 60;
-// Prevents start button from being clicked while round in progress
-startButton.disabled = true;
-startTimer()
+    isWin = false;
+    timerCount = 60;
+    // Prevents start button from being clicked while round in progress
+    startButton.disabled = true;
+    startTimer()
+    playGame()
 }
+// The playGame function is called to start the questions
+function playGame() {
+    console.log("Hello from play game");
+    //questionsArea
+    //create an h2 tag <h2></h2>
+    var currentQuestion = document.createElement("h3");
 
+    var currentQuestionIndex = 0;
+    //create an h2 tag <h2>add currentQuestion here!!!</h2>
+    currentQuestion.textContent = questionElement[currentQuestionIndex].question;
+
+    //appending currentQuestion to the questions area
+    questionsArea.appendChild(currentQuestion)
+
+    questionElement[0].options;
+    for (var i = 0; i < questionElement[currentQuestionIndex].options.length; i++) {
+        console.log("hello", questionElement[currentQuestionIndex].options[i])
+        //create a button
+        var newButton = document.createElement("button");
+
+        //add the option as text content
+        newButton.textContent = questionElement[currentQuestionIndex].options[i];
+        //append the button to the questionArea
+        questionsArea.appendChild(newButton);
+    }
+}
 // The winGame function is called when the win condition is met
 function winGame() {
     options.textContent = "YOU WON!!!🏆 ";
@@ -81,24 +108,24 @@ function loseGame() {
 // The setTimer function starts and stops the timer and triggers winGame() and loseGame()
 function startTimer() {
     //Sets timer
-    timer = setInterval(function() {
+    timer = setInterval(function () {
         timerCount--;
         timerElement.textContent = timerCount;
         if (timerCount >= 0) {
             // Tests if win condition is met
             if (isWin && timerCount > 0) {
-            //Clears interval and stops timer
-            clearInterval(timer);
-            winGame();
+                //Clears interval and stops timer
+                clearInterval(timer);
+                winGame();
+            }
         }
-    }
-//Tests if time has run out
-if (timerCount === 0) {
-    // Clears interval
-    clearInterval(timer);
-    loseGame();
-    }
-  }, 1000);
+        //Tests if time has run out
+        if (timerCount === 0) {
+            // Clears interval
+            clearInterval(timer);
+            loseGame();
+        }
+    }, 1000);
 }
 
 // Updates win count on screen and sets lose count to client storage
@@ -124,8 +151,8 @@ function getWins() {
         // If value is retreived from client storage set the winCounter to that value
         winCounter = storedWins;
     }
-// Render win count to page
-win.textContent = winCounter;
+    // Render win count to page
+    win.textContent = winCounter;
 }
 
 function getLosses() {
@@ -145,7 +172,7 @@ function endGame() {
     clearInterval(timer);
     var codeQuiz = document.querySelector(".window");
 
-    codeQuiz.addEventListener("click", function(event) {
+    codeQuiz.addEventListener("click", function (event) {
         var element = event.target;
 
     })
