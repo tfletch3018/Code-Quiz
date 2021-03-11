@@ -35,6 +35,10 @@ body {
     margin-top: 16px;
 }
 
+.quizCode {
+    font-size: 14px;
+    display:flexbox;
+}
 button {
     background: radial-gradient(circle, rgb(21, 21, 141) 0%, rgb(157, 157, 250) 100%);
     border-radius: 8px;

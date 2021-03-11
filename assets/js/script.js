@@ -4,8 +4,9 @@ var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 
+
 var score = 0;
-var question = -1;
+var question;
 var timeLeft = 0;
 var winCounter = 0;
 var loseCounter = 0;
@@ -14,7 +15,7 @@ var timer;
 var timerCount;
 
 // Array of quiz questions, multiple choice options, and responses
-var questions = [{
+var question = [{
     
     question: "Commonly used data types DO NOT include:____.",
     options: ["strings( )", "booleans( )", "alerts( )", "numbers( )"],
@@ -138,6 +139,16 @@ function getLosses() {
 }
 
 function checkWin() {
+}
+
+function endGame() {
+    clearInterval(timer);
+    var codeQuiz = document.querySelector(".window");
+
+    codeQuiz.addEventListener("click", function(event) {
+        var element = event.target;
+
+    })
 }
 // Attach event listener to start button to call startGame function on click
 startButton.addEventListener("click", startGame);
