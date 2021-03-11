@@ -1,0 +1,146 @@
+/* Universal styling */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --orchid:#d9b3ff;
+    --cool:#4dffff;
+    --gray:#595959;
+    --fun:#ff66cc;
+    --dark:#000000;
+    --mood:#9900cc;
+}
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background: linear-gradient(0deg, rgb(127, 63, 191) 0%, rgba(170, 131, 210, 0.4) 63%);
+}
+
+.reset-button {
+    font-size: 16px;
+    height: 30px;
+    line-height: 8px;
+    margin-top: 20px;
+}
+
+.win-loss-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+button {
+    background: radial-gradient(circle, rgb(21, 21, 141) 0%, rgb(157, 157, 250) 100%);
+    border-radius: 8px;
+    color: var(--dark);
+    cursor: pointer;
+    font-size: 2em;
+    letter-spacing: 0.21px;
+    line-height: 16px;
+    max-width: 255px;
+    padding: 20px 52px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+    margin-top: 0.6em;
+}
+
+header {
+    padding: 40px;
+    text-align: center;
+    background: var(--dark);
+    color: var(--orchid);
+    border-bottom:30px var(--mood);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section {
+    flex: 0 auto;
+    padding: 8px;
+    margin-top: 50px;
+    background-color: var(--cool);
+    border-radius: 8px;
+}
+
+.options {
+    width: 55vw;
+    height: 400px;
+}
+
+.results {
+    width: 30vw;
+    height: 400px;
+}
+
+.card {
+    background: radial-gradient(circle, rgb(22, 84, 53) 0%, rgb(150, 242, 196) 100%);
+    border: 1px solid var(--orchid);
+    border-radius: 8px;
+    box-shadow: var(--gray) 0 1px 2px 0,
+    var(--gray) 0 2px 4px 3px;
+    margin: auto;
+    padding: 20px;
+}
+
+.window {
+    line-height: 360px;
+}
+
+.styled {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.timer {
+    height: 240px;
+    padding: 10px;
+    background: var(--dark);
+    color: var(--orchid);
+    text-align: center;
+}
+
+.timer-text {
+    padding: 55px;
+}
+
+@media screen and (max-width: 1183px) {
+    main {
+        flex-direction: column;
+    }
+
+    .options,
+    .results {
+    width: 90vw;
+    }
+
+section {
+    background-color: var(--orchid);
+    margin: 20px auto;
+    width: 92vw;
+    }
+}
+
+@media screen and (max-width: 504px) {
+    .style {
+        font-size: 2em;
+    }
+    .reset-button {
+        font-size: 12px;
+        width: 20ox;
+    }
+    .timer {
+        height: 200px;
+    }
+}
