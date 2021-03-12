@@ -89,6 +89,16 @@ function playGame() {
         questionsArea.appendChild(newButton);
     }
 }
+
+function next() {
+    currentQuestion++;
+    if (currentQuestion > questionElement.length - 1) {
+        endGame();
+        return;
+    }
+}
+
+
 // The winGame function is called when the win condition is met
 function winGame() {
     options.textContent = "YOU WON!!!🏆 ";

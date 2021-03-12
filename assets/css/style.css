@@ -39,12 +39,12 @@ body {
     font-size: 14px;
     display:flexbox;
 }
-button {
+button  {
     background: radial-gradient(circle, rgb(21, 21, 141) 0%, rgb(157, 157, 250) 100%);
     border-radius: 8px;
     color: var(--dark);
     cursor: pointer;
-    font-size: 2em;
+    font-size: 1.0em;
     letter-spacing: 0.21px;
     line-height: 16px;
     max-width: 255px;
@@ -103,7 +103,6 @@ section {
 }
 
 .styled {
-    font-size: 3.5em;
     text-align: center;
 }
 
