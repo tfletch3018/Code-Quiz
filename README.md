@@ -39,3 +39,5 @@ You are required to submit BOTH of the following for review:
 * The URL of the GitHub repository, with a unique name and a readme describing the project.
 
 ---
+https://tfletch3018.github.io/Code-Quiz/
+https://github.com/tfletch3018/Code-Quiz
